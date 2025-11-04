@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STACKLY ARCHITECH STUDIO | Designing Dreams into Reality</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #00bcd4;
+      --white: #ffffff;
+      --light: #e2e8f0;
+      --gray: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #f0f4f8 100%);
+      color: var(--primary);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: relative;
+      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(30,41,59,0.95)),
+        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    /* Background animation shapes */
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0,188,212,0.15);
+      z-index: 0;
+      animation: float 12s infinite ease-in-out alternate;
+    }
+
+    header::before {
+      width: 350px;
+      height: 350px;
+      top: 10%;
+      left: -120px;
+    }
+
+    header::after {
+      width: 450px;
+      height: 450px;
+      bottom: -80px;
+      right: -150px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-30px) scale(1.05); }
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8vw;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 5px var(--accent));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      text-align: center;
+      padding: 100px 10vw 140px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    }
+
+    .banner p {
+      font-size: 1.25rem;
+      color: #b2ebf2;
+      margin-bottom: 25px;
+    }
+
+    .banner button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .banner button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+
+    /* ===== SERVICES ===== */
+    .services-section {
+      background: var(--white);
+      border-radius: 16px;
+      margin: -70px auto 60px;
+      max-width: 1100px;
+      padding: 50px 6vw;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .services-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .services-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 28px;
+      width: 280px;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0,188,212,0.2);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      border-radius: 16px;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 50px 8vw;
+      text-align: center;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .about p {
+      color: var(--secondary);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--secondary);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #26c6da;
+    }
+
+    footer p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--secondary);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 60vw;
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      .nav-links.show { display: flex; }
+      .hamburger { display: block; color: var(--white); }
+      .banner h1 { font-size: 2rem; }
+      .banner p { font-size: 1rem; }
+      .service-card { width: 100%; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="logo" />
+        STACKLY ARCHITECH STUDIO
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <section class="banner">
+      <h1>Designing Dreams into Reality</h1>
+      <p>Innovative • Sustainable • Inspiring Architectural Creations</p>
+      <button onclick="window.location.href='projects.html'">Explore Our Projects</button>
+    </section>
+  </header>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services-section">
+    <h2>Our Expertise</h2>
+    <div class="services-cards">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Structural Design</h3>
+        <p>Building strong, sustainable foundations with cutting-edge structural engineering.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖌️</div>
+        <h3>Interior Architecture</h3>
+        <p>Seamlessly blending beauty and function to redefine interior spaces.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Eco Solutions</h3>
+        <p>Green building solutions that respect nature and enhance urban living.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about">
+    <h2>About STACKLY ARCHITECH STUDIO</h2>
+    <p>We craft modern, aesthetic, and sustainable designs tailored to your vision. Our team blends creativity with innovation to deliver functional yet stunning architecture across residential, commercial, and interior projects.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <h3>Connect With Us</h3>
+    <p>📞 +91 8056522920</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tea_lvr_2.o" target="_blank">📷 Instagram</a>
+      <a href="https://facebook.com/surya.kumar" target="_blank">📘 Facebook</a>
+    </div>
+    <p>© 2025 STACKLY ARCHITECH STUDIO. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    // Navbar toggle
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

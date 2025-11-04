@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | STACKLY ARCHITECH STUDIO</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #00bcd4;
+      --white: #ffffff;
+      --light: #e2e8f0;
+      --gray: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #f0f4f8 100%);
+      color: var(--primary);
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(30,41,59,0.95)),
+        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0,188,212,0.15);
+      animation: float 12s infinite ease-in-out alternate;
+      z-index: 0;
+    }
+
+    header::before {
+      width: 400px;
+      height: 400px;
+      top: 10%;
+      left: -120px;
+    }
+
+    header::after {
+      width: 500px;
+      height: 500px;
+      bottom: -100px;
+      right: -150px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-25px); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8vw;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .logo img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 5px var(--accent));
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--white);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 120px 10vw 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #b2ebf2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      max-width: 1200px;
+      margin: -60px auto 80px;
+      padding: 50px 8vw;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 40px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,188,212,0.25);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--secondary);
+      color: var(--white);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #26c6da;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--secondary);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 60vw;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .nav-links.show { display: flex; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="logo" />
+        STACKLY ARCHITECH STUDIO
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <div class="hero">
+      <h1>Our Services</h1>
+      <p>From visionary concepts to structural excellence — we deliver architecture that defines innovation and elegance.</p>
+    </div>
+  </header>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services">
+    <h2>What We Offer</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Architectural Design</h3>
+        <p>Concept-to-construction design services blending aesthetics and utility to craft inspiring structures.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Residential Projects</h3>
+        <p>Elegant and comfortable homes tailored to your lifestyle and future needs with sustainable planning.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Commercial Architecture</h3>
+        <p>High-performance office spaces and commercial complexes designed for modern functionality and flow.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Interior Design</h3>
+        <p>Refined interior architecture solutions that merge creativity, purpose, and elegance seamlessly.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Sustainable Design</h3>
+        <p>Eco-friendly approaches using renewable materials and smart energy systems for a greener future.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>3D Visualization</h3>
+        <p>Immersive 3D modeling and walkthroughs bringing your architectural vision to life before construction.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button onclick="window.location.href='404.html'">Book a Consultation</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <h3>Connect With Us</h3>
+    <p>📞 +91 8056522920</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tea_lvr_2.o" target="_blank">📷 Instagram</a>
+      <a href="https://facebook.com/surya.kumar" target="_blank">📘 Facebook</a>
+    </div>
+    <p>© 2025 STACKLY ARCHITECH STUDIO. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    document.querySelector(".hamburger").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
